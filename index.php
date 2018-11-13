@@ -1,13 +1,16 @@
 <?php
-define('ROOT', dirname(__FILE__));
+include_once 'init.php';
 
-include 'classes/HHParser.php';
-
-//use classes\HHParser;
+//27435
+//28283634
+use classes\parsers\HHParser;
 
 
 $parser = HHParser::getInstance();
-$result = $parser->company_parser->searchCompanies(['text' => 'jti']);
+//$result = $parser->vacancy_parser->getVacanciesByCompanyId(27435);
+$result = $parser->vacancy_parser->searchVacancies(['text' => '123'], 28283634);
+if($result === false)
+    echo 123;
 ?>
 <pre>
     <?php print_r($result);?>

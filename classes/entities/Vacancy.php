@@ -1,11 +1,19 @@
 <?php
+namespace classes\entities;
 /**
  * Class Vacancy
  *
  * @property int $id
  * @property boolean $premium
+ * @property object $billing_type
  * @property string $name
  * @property object $department
+ * @property boolean $allow_messages
+ * @property object $site
+ * @property object $experience
+ * @property object $schedule
+ * @property object $employment
+ * @property string $description
  * @property int $has_test
  * @property int $response_letter_required
  * @property object $area
@@ -23,10 +31,8 @@
  * @property object $snippet
  * @property object $contacts
  *
- * @property Vacancy[] $vacancies
- *
  */
-
+namespace classes;
 class Vacancy
 {
     public function __construct($params)

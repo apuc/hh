@@ -1,10 +1,14 @@
 <?php
+namespace classes\parsers;
 
-include 'classes/CompanyParser.php';
+
+
+use classes\Vacancy;
 
 class HHParser
 {
     public $company_parser;
+    public $vacancy_parser;
     private static $instance = null;
 
     public static function getInstance()
@@ -19,5 +23,6 @@ class HHParser
     private function __clone() {}
     private function __construct() {
         $this->company_parser = new CompanyParser();
+        $this->vacancy_parser = new VacancyParser();
     }
 }

@@ -1,5 +1,5 @@
 <?php
-include 'Vacancy.php';
+namespace classes\entities;
 /**
  * Class Company
  *
@@ -16,8 +16,6 @@ include 'Vacancy.php';
  * @property array $area
  * @property string $branded_description
  *
- * @property Vacancy[] $vacancies
- *
  */
 
 class Company
@@ -27,17 +25,6 @@ class Company
         foreach($params as $key => $value){
             $this->$key = $value;
         }
-        $this->vacancies = $this->getVacancies();
     }
 
-    private function getVacancies(){
-        $opt = include(ROOT.'\classes\config.php');
-        $context = stream_context_create($opt['query_params']);
-
-        $result = json_decode(file_get_contents($this->vacancies_url , false, $context));
-        foreach($result->items as $item){
-            $vacancies[] = new Vacancy($item);
-        }
-        return $vacancies;
-    }
 }
