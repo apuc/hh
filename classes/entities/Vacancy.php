@@ -32,7 +32,7 @@ namespace classes\entities;
  * @property object $contacts
  *
  */
-namespace classes;
+
 class Vacancy
 {
     public function __construct($params)

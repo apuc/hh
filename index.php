@@ -7,8 +7,10 @@ use classes\parsers\HHParser;
 
 
 $parser = HHParser::getInstance();
-//$result = $parser->vacancy_parser->getVacanciesByCompanyId(27435);
-$result = $parser->vacancy_parser->searchVacancies(['text' => '123'], 28283634);
+$result = $parser->vacancy_parser->searchVacancies([
+        'specialization' => $parser->specialization_parser->getIdByName('Банковское ПО'),
+        'area' => $parser->area_parser->getIdByName('Киев')
+]);
 if($result === false)
     echo 123;
 ?>

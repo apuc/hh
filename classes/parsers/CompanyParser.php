@@ -1,5 +1,7 @@
 <?php
 namespace classes\parsers;
+
+
 use classes\entities\Company;
 
 class CompanyParser extends AbstractParser

@@ -61,7 +61,6 @@ class VacancyParser extends AbstractParser
             $url .= $key.'='.$value . '&';
         }
         $url = substr($url, 0, -1);
-
         $result = self::sendGetRequest($url);
         if(!$result->items)
             return false;
@@ -71,5 +70,4 @@ class VacancyParser extends AbstractParser
         }
         return $vacancies;
     }
-
 }
